@@ -1,25 +1,25 @@
 def printGameBoard(triesRemaining):
     if triesRemaining == 10:
-        gameboard = "<No Danger>"
+        gameboard = "---------\n      |\n      |\n      |\n      |\n      |\n_________"
     elif triesRemaining == 9:
-        gameboard = "<Rope>"
+        gameboard = "---------\n   |  |\n      |\n      |\n      |\n      |\n_________"
     elif triesRemaining == 8:
-        gameboard = "<Head>"
+        gameboard = "---------\n   |  |\n   () |\n      |\n      |\n      |\n_________"
     elif triesRemaining == 7:
-        gameboard = "<Left Arm>"
+        gameboard = "---------\n   |  |\n   () |\n  \   |\n      |\n      |\n_________"
     elif triesRemaining == 6:
-        gameboard = "<Left Body>"
+        gameboard = "---------\n   |  |\n   () |\n  \|  |\n      |\n      |\n_________"
     elif triesRemaining == 5:
-        gameboard = "<Right Body>"
+        gameboard = "---------\n   |  |\n   () |\n  \|| |\n      |\n      |\n_________"
     elif triesRemaining == 4:
-        gameboard = "<Right Arm>"
+        gameboard = "---------\n   |  |\n   () |\n  \||/|\n      |\n      |\n_________"
     elif triesRemaining == 3:
-        gameboard = "<Left Leg>"
+        gameboard = "---------\n   |  |\n   () |\n  \||/|\n   /  |\n      |\n_________"
     elif triesRemaining == 2:
-        gameboard = "<Left Foot>"
+        gameboard = "---------\n   |  |\n   () |\n  \||/|\n   /\ |\n      |\n_________"
     elif triesRemaining == 1:
-        gameboard = "<Right Leg>"
+        gameboard = "---------\n   |  |\n   () |\n  \||/|\n   /\ |\n  /   |\n_________"
     else:
-        gameboard = "<Right Foot>"
+        gameboard = "---------\n   |  |\n   () |\n  \||/|\n   /\ |\n  /  \|\n_________"
 
     print(gameboard)
