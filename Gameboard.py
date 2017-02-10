@@ -1,93 +1,25 @@
 def printGameBoard(triesRemaining):
-    gameboard = {
-        10: "-----------\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "------------------------",
-        9: "-----------\n"
-         " |        |\n"
-         "          |\n"
-         "          |\n"
-         "          |\n"
-         "          |\n"
-         "          |\n"
-         "---------------",
-        8: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "------------------------",
-        7: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "\\         |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "------------------------",
-        6: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "\\|        |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "------------------------",
-        5: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "\\||       |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "------------------------",
-        4: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "\\||/      |\n"
-                        "          |\n"
-                        "          |\n"
-                        "          |\n"
-                        "------------------------",
-        3: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "\\||/      |\n"
-                        " |        |\n"
-                        "          |\n"
-                        "          |\n"
-                        "------------------------",
-        2: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "\\||/      |\n"
-                        " ||       |\n"
-                        "          |\n"
-                        "          |\n"
-                        "------------------------",
-        1: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "\\||/      |\n"
-                        " ||       |\n"
-                        "/         |\n"
-                        "          |\n"
-                        "------------------------",
-        0: "-----------\n"
-                        " |        |\n"
-                        " ()       |\n"
-                        "\\||/      |\n"
-                        " ||       |\n"
-                        "/  \\      |\n"
-                        "          |\n"
-                        "------------------------"
-    }
+    if triesRemaining == 10:
+        gameboard = "<No Danger>"
+    elif triesRemaining == 9:
+        gameboard = "<Rope>"
+    elif triesRemaining == 8:
+        gameboard = "<Head>"
+    elif triesRemaining == 7:
+        gameboard = "<Left Arm>"
+    elif triesRemaining == 6:
+        gameboard = "<Left Body>"
+    elif triesRemaining == 5:
+        gameboard = "<Right Body>"
+    elif triesRemaining == 4:
+        gameboard = "<Right Arm>"
+    elif triesRemaining == 3:
+        gameboard = "<Left Leg>"
+    elif triesRemaining == 2:
+        gameboard = "<Left Foot>"
+    elif triesRemaining == 1:
+        gameboard = "<Right Leg>"
+    else:
+        gameboard = "<Right Foot>"
+
     print(gameboard)
-    return gameboard.get(triesRemaining, "nothing")

@@ -1,7 +1,7 @@
 import Gameboard
 
 
-def makeAGuess(triesRemaining):
+def makeAGuess(decrementTries):
     guess = input()
     if guess in wordGuessArray:
         for x in range(len(wordGuessArray)):
@@ -9,24 +9,25 @@ def makeAGuess(triesRemaining):
                 wordArray[x] = guess
         print(wordArray)
         print("Correct!")
-        return triesRemaining
+        return decrementTries
     else:
-        triesRemaining -= 1
-        if triesRemaining >= 1:
-            print("Wrong. Try again. You have", triesRemaining, "tries remaining.")
-            return triesRemaining
+        decrementTries -= 1
+        if decrementTries >= 1:
+            print("Wrong. Try again. You have", decrementTries, "tries remaining.")
+            return decrementTries
 
 
 wordToGuess = "bicycle"
 wordGuessArray = list(wordToGuess)
 wordArray = ["_", "_", "_", "_", "_", "_", "_", ]
-x = 10
+triesRemaining = 10
 print("Welcome to hangman!\nPlease enter a letter to guess the word.")
 print(wordArray)
-while "_" in wordArray and x is not None:
-    x = makeAGuess(x)
-    # Gameboard.printGameBoard(x)
+Gameboard.printGameBoard(triesRemaining)
+while "_" in wordArray and triesRemaining is not None:
+    triesRemaining = makeAGuess(triesRemaining)
+    Gameboard.printGameBoard(triesRemaining)
 if "_" not in wordArray:
     print("You got it!")
-elif x is None:
+elif triesRemaining is None:
     print("Game Over")
