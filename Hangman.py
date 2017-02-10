@@ -7,11 +7,12 @@ def makeAGuess(triesRemaining):
         for x in range(len(wordGuessArray)):
             if guess == wordGuessArray[x]:
                 wordArray[x] = guess
-                print(wordArray)
-                print("Correct!")
+        print(wordArray)
+        print("Correct!")
+        return triesRemaining
     else:
         triesRemaining -= 1
-        if triesRemaining > 0:
+        if triesRemaining >= 1:
             print("Wrong. Try again. You have", triesRemaining, "tries remaining.")
             return triesRemaining
 
@@ -22,10 +23,10 @@ wordArray = ["_", "_", "_", "_", "_", "_", "_", ]
 x = 10
 print("Welcome to hangman!\nPlease enter a letter to guess the word.")
 print(wordArray)
-while "_" in wordArray and (x > 0 or x is None):
+while "_" in wordArray and x is not None:
     x = makeAGuess(x)
     # Gameboard.printGameBoard(x)
 if "_" not in wordArray:
     print("You got it!")
-elif x == 0 or x is None:
+elif x is None:
     print("Game Over")
